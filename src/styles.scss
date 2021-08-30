@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2d2d37;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.App {
+  min-height: 100px;
+  width: 60%;
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 2rem;
+  border: .5rem solid white;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+  form {
+    margin-bottom: 1rem;
+    input, button {
+      font-size: 1.2rem;
+      margin: .3rem;
+      border: 2px solid gray;
+      background-color: transparent;
+      color: white;
+      border-radius: .3rem;
+      cursor: pointer;
+      :hover {
+        border-color: white;
+      }
+    }
+  }
+  .items {
+    margin: 1rem;
+    text-align: center;
+    min-width: 80%;
+    min-height: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    .item {
+      margin: .3rem;
+      :hover{
+        background-color: black;
+        border-radius: .5rem;
+        cursor: pointer;
+      }
+      p {
+        margin: 0;
+        padding: .4rem;
+        font-size: 1.3rem;
+      }
+    }
+    .item.completed {
+      background-color: gray;
+      border-radius: .5rem;
+      text-decoration: line-through;
+      :hover{
+        background-color: gray;
+      }
+    }
+  }
+  button.final {
+    font-size: 1.2rem;
+    padding: .8rem;
+    margin: .7rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid gray;
+    border-radius: 1rem;
+  }
+  button.final:hover {
+    border-color: white;
+    cursor: pointer;
+  }
+}
