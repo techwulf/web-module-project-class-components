@@ -47,13 +47,22 @@ class App extends React.Component {
     })
   }
 
+  handleClick = () => {
+    this.setState({
+      ...this.state,
+      listItems: this.state.listItems.filter(item => {
+        return(item.completed === false);
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Todo List</h1>
         <TodoForm onAdd={this.onAdd}/>
         <TodoList toggle={this.handleToggle} items={this.state.listItems}/>
-        <button className="final">Clear Completed!</button>
+        <button onClick={this.handleClick}className="final">Clear Completed!</button>
       </div>
     );
   }
