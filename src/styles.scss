@@ -52,4 +52,24 @@ span {
       border-radius: .3rem;
     }
   }
+  .items {
+    margin: 1rem;
+    text-align: center;
+    min-width: 80%;
+    min-height: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    .item {
+      :hover{
+        background-color: black;
+        border-radius: .5rem;
+        cursor: pointer;
+      }
+      p {
+        margin: 0;
+        padding: .4rem;
+        font-size: 1.3rem;
+      }
+    }
+  }
 }

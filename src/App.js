@@ -6,12 +6,12 @@ import TodoList from './components/TodoList';
 const initialTestData = [
   {
     task: 'Test list',
-    id: Date.now(),
+    id: Date.now()+2,
     completed: false
   },
   {
     task: 'Test second item',
-    id: Date.now(),
+    id: Date.now()+1,
     completed: false
   }
 ];
@@ -26,7 +26,7 @@ class App extends React.Component {
 
   onAdd = name => {
     const newItem = {
-      name: name,
+      task: name,
       id: Date.now(),
       purchased: false
     };
@@ -41,6 +41,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Todo List</h1>
         <TodoForm onAdd={this.onAdd}/>
+        <TodoList items={this.state.listItems}/>
       </div>
     );
   }
