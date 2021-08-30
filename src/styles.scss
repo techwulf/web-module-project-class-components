@@ -50,6 +50,10 @@ span {
       background-color: transparent;
       color: white;
       border-radius: .3rem;
+      cursor: pointer;
+      :hover {
+        border-color: white;
+      }
     }
   }
   .items {
@@ -60,6 +64,7 @@ span {
     display: flex;
     flex-flow: column nowrap;
     .item {
+      margin: .3rem;
       :hover{
         background-color: black;
         border-radius: .5rem;
@@ -71,5 +76,26 @@ span {
         font-size: 1.3rem;
       }
     }
+    .item.completed {
+      background-color: gray;
+      border-radius: .5rem;
+      text-decoration: line-through;
+      :hover{
+        background-color: gray;
+      }
+    }
+  }
+  button.final {
+    font-size: 1.2rem;
+    padding: .8rem;
+    margin: .7rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid gray;
+    border-radius: 1rem;
+  }
+  button.final:hover {
+    border-color: white;
+    cursor: pointer;
   }
 }

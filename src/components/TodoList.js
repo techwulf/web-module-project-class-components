@@ -15,7 +15,7 @@ class TodoList extends React.Component {
       <div className="items">
         {
           this.props.items.map(item => (
-            <Item key={item.id} item={item} />
+            <Item toggle={this.props.toggle} key={item.id} item={item} />
           ))
         }
       </div>

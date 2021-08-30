@@ -5,13 +5,8 @@ import TodoList from './components/TodoList';
 
 const initialTestData = [
   {
-    task: 'Test list',
+    task: 'Create a todo list',
     id: Date.now()+2,
-    completed: false
-  },
-  {
-    task: 'Test second item',
-    id: Date.now()+1,
     completed: false
   }
 ];
@@ -28,7 +23,7 @@ class App extends React.Component {
     const newItem = {
       task: name,
       id: Date.now(),
-      purchased: false
+      completed: false
     };
     this.setState({
       ...this.state,
@@ -36,12 +31,29 @@ class App extends React.Component {
     });
   }
 
+  handleToggle = id => {
+    this.setState({
+      ...this.state,
+      listItems: this.state.listItems.map(item => {
+        if (item.id === id) {
+          return({
+            ...item,
+            completed: !item.completed
+          });
+        } else {
+          return(item);
+        }
+      })
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Todo List</h1>
         <TodoForm onAdd={this.onAdd}/>
-        <TodoList items={this.state.listItems}/>
+        <TodoList toggle={this.handleToggle} items={this.state.listItems}/>
+        <button className="final">Clear Completed!</button>
       </div>
     );
   }

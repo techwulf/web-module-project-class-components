@@ -16,7 +16,9 @@ class TodoForm extends React.Component {
 
   onClick = evt => {
     evt.preventDefault();
-    this.props.onAdd(this.state.input);
+    if (this.state.input !== ''){
+      this.props.onAdd(this.state.input);
+    }
     this.setState({...this.state,input:''});
   }
 
